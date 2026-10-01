@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jezevčík – Encyklopedie vznešeného párkového plemene</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        dachshund: {
+                            50: '#fbf7f4',
+                            100: '#f5ebe3',
+                            200: '#ebd8cc',
+                            300: '#d9b59e',
+                            500: '#b86f42',
+                            700: '#8c4d28',
+                            900: '#592e16',
+                            dark: '#1c120c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes tailWag {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(15deg); }
+        }
+        .animate-wag {
+            animation: tailWag 0.8s ease-in-out infinite;
+            transform-origin: bottom left;
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbf7f4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d9b59e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b86f42;
+        }
+    </style>
+</head>
+<body class="bg-dachshund-50 text-dachshund-dark font-sans antialiased selection:bg-dachshund-300 selection:text-dachshund-900">
+
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-dachshund-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-dachshund-500 flex items-center justify-center text-white shadow-md shadow-dachshund-500/20 font-black text-xl">
+                    🌭
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-dachshund-900">Jezevčík</span>
+                    <span class="text-xs block text-dachshund-500 font-semibold uppercase tracking-widest">Encyklopedie</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-dachshund-dark/80">
+                <a href="#puvod" class="hover:text-dachshund-500 transition-colors">Původ</a>
+                <a href="#varianty" class="hover:text-dachshund-500 transition-colors">Typy srsti</a>
+                <a href="#povaha" class="hover:text-dachshund-500 transition-colors">Povaha</a>
+                <a href="#pece" class="hover:text-dachshund-500 transition-colors">Péče & Zdraví</a>
+                <a href="#zajimavosti" class="hover:text-dachshund-500 transition-colors">Zajímavosti</a>
+            </nav>
+            <a href="#puvod" class="bg-dachshund-500 hover:bg-dachshund-700 text-white font-medium px-5 py-2.5 rounded-full transition-all shadow-md shadow-dachshund-500/20 text-sm">Prozkoumat</a>
+        </div>
+    </header>
+
+    <section class="relative overflow-hidden py-16 sm:py-24 bg-gradient-to-b from-white via-dachshund-50 to-dachshund-100/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-dachshund-200/80 text-dachshund-900 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
+                        <span>✨ Dlouhé tělo, velkolepá osobnost</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-dachshund-900 leading-tight">
+                        Vznešený svět <span class="text-dachshund-500 underline decoration-wavy decoration-2">jezevčíků</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-dachshund-dark/80 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Objevte kouzlo jednoho z nejcharismatičtějších psích plemen na světě. Malý lovec s neohroženým srdcem a geniálním smyslem pro humor.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#povaha" class="bg-dachshund-900 hover:bg-dachshund-700 text-white font-bold px-8 py-4 rounded-2xl transition-all shadow-lg shadow-dachshund-900/10 text-center">Poznat povahu</a>
+                        <a href="#zajimavosti" class="bg-white hover:bg-dachshund-50 text-dachshund-900 border border-dachshund-300 font-bold px-8 py-4 rounded-2xl transition-all text-center">Fakta & Mýty</a>
+                    </div>
+                </div>
+                
+                <!-- Pure SVG Dachshund Graphic Art -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-80 h-80 sm:w-96 sm:h-96 flex items-center justify-center animate-float">
+                        <div class="absolute inset-0 bg-dachshund-200 rounded-full filter blur-3xl opacity-50"></div>
+                        <div class="relative z-10 bg-white p-8 rounded-3xl shadow-xl border border-dachshund-200 w-full flex flex-col items-center justify-center">
+                            <!-- Pure SVG Dachshund -->
+                            <svg class="w-64 h-52 text-dachshund-900" viewBox="0 0 320 220" fill="currentColor">
+                                <!-- Tail -->
+                                <g class="animate-wag">
+                                    <path d="M 35,75 Q 15,60 22,40 Q 28,35 35,50 Z" class="text-dachshund-700"/>
+                                </g>
+                                <!-- Extended Body -->
+                                <ellipse cx="145" cy="120" rx="80" ry="34" />
+                                <!-- Deep Chest -->
+                                <path d="M 195,95 Q 225,105 220,135 Q 205,145 180,135 Z" />
+                                <!-- Head -->
+                                <circle cx="235" cy="90" r="26" />
+                                <!-- Long Snout -->
+                                <path d="M 245,84 Q 295,90 305,100 Q 295,106 245,98 Z" />
+                                <!-- Floppy Ear -->
+                                <path d="M 225,82 Q 212,115 232,130 Q 242,115 238,92 Z" class="text-dachshund-700"/>
+                                <!-- Eye -->
+                                <circle cx="244" cy="85" r="3.5" class="text-white"/>
+                                <!-- Collar -->
+                                <path d="M 215,80 Q 210,95 215,110" stroke="#b86f42" stroke-width="4" fill="none"/>
+                                <!-- Short Stumpy Legs -->
+                                <rect x="85" y="145" width="14" height="28" rx="7"/>
+                                <rect x="112" y="145" width="14" height="28" rx="7"/>
+                                <rect x="178" y="145" width="14" height="28" rx="7"/>
+                                <rect x="205" y="145" width="14" height="28" rx="7"/>
+                            </svg>
+                            <span class="mt-4 text-xs font-bold uppercase tracking-widest text-dachshund-500 bg-dachshund-100 px-3 py-1.5 rounded-full">Oficiální tvar: Aerodynamická klobása</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="puvod" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-dachshund-100 text-dachshund-900 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Historické kořeny</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-dachshund-900 mt-3 mb-4">Německá tradice a lovecká duše</h2>
+                <p class="text-dachshund-dark/70 text-lg">Nenechte se zmást jejich dnešním pohodlným životem na gauči. Jezevčíci byli zrozeni k boji v podzemí.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-dachshund-50 p-8 rounded-3xl border border-dachshund-200/80 hover:shadow-lg transition-all group">
+                    <div class="w-14 h-14 bg-dachshund-200 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-dachshund-500 group-hover:text-white transition-colors">
+                        📜
+                    </div>
+                    <h3 class="text-xl font-bold text-dachshund-900 mb-3">16. století v Německu</h3>
+                    <p class="text-dachshund-dark/70 leading-relaxed">První písemné zmínky o „jezevčích psech“ (Dachshund) pocházejí z německých lesnických spisů. Byli šlechtěni pro vytrvalý lov v norách.</p>
+                </div>
+                
+                <div class="bg-dachshund-50 p-8 rounded-3xl border border-dachshund-200/80 hover:shadow-lg transition-all group">
+                    <div class="w-14 h-14 bg-dachshund-200 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-dachshund-500 group-hover:text-white transition-colors">
+                        ⛏️
+                    </div>
+                    <h3 class="text-xl font-bold text-dachshund-900 mb-3">Tvar pro norování</h3>
+                    <p class="text-dachshund-dark/70 leading-relaxed">Prodloužené tělo a krátké silné nohy nebyly náhodou. Umožňovaly psu proniknout úzkými chodbami za jezevci a liškami bez ztráty odvahy.</p>
+                </div>
+                
+                <div class="bg-dachshund-50 p-8 rounded-3xl border border-dachshund-200/80 hover:shadow-lg transition-all group">
+                    <div class="w-14 h-14 bg-dachshund-200 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-dachshund-500 group-hover:text-white transition-colors">
+                        👑
+                    </div>
+                    <h3 class="text-xl font-bold text-dachshund-900 mb-3">Královská přízeň</h3>
+                    <p class="text-dachshund-dark/70 leading-relaxed">Díky svému nezlomnému charakteru a oddanosti si jezevčíci rychle podmanili evropské panovnické dvory včetně britské královny Viktorie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="varianty" class="py-20 bg-dachshund-100/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-dachshund-200 text-dachshund-900 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Rozmanitost plemene</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-dachshund-900 mt-3 mb-4">Typy srsti a velikostní varianty</h2>
+                <p class="text-dachshund-dark/70 text-lg">Jezevčík se vyskytuje ve třech velikostech a třech typech srsti. Vyberte si kombinaci podle svého stylu.</p>
+            </div>
+
+            <!-- Coat types grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-3xl border border-dachshund-200 shadow-sm">
+                    <div class="text-3xl mb-4">✨</div>
+                    <h3 class="text-2xl font-bold text-dachshund-900 mb-2">Hladkosrstý</h3>
+                    <p class="text-dachshund-dark/70 mb-4 leading-relaxed">Původní a nejznámější typ. Srst je krátká, hustá, lesklá a hladce přiléhající. Nenáročná na údržbu, ale miluje teplo a deky.</p>
+                    <span class="bg-dachshund-100 text-dachshund-900 text-xs font-bold px-3 py-1 rounded-full">Klasická elegance</span>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl border border-dachshund-200 shadow-sm">
+                    <div class="text-3xl mb-4">🦁</div>
+                    <h3 class="text-2xl font-bold text-dachshund-900 mb-2">Dlouhosrstý</h3>
+                    <p class="text-dachshund-dark/70 mb-4 leading-relaxed">Vyniká měkkou, lesklou srstí s praporci na ocase a nohou. Působí velmi aristokraticky a vznešeně, vyžaduje pravidelné česání.</p>
+                    <span class="bg-dachshund-100 text-dachshund-900 text-xs font-bold px-3 py-1 rounded-full">Aristokratická noblesa</span>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl border border-dachshund-200 shadow-sm">
+                    <div class="text-3xl mb-4">🧔</div>
+                    <h3 class="text-2xl font-bold text-dachshund-900 mb-2">Drsnosrstý</h3>
+                    <p class="text-dachshund-dark/70 mb-4 leading-relaxed">Má typický „vousatý“ obličej, obočí a hustou drsnou srst. Jsou známí svou čiperností, houževnatostí a veselou povahou.</p>
+                    <span class="bg-dachshund-100 text-dachshund-900 text-xs font-bold px-3 py-1 rounded-full">Drzý dobrodruh</span>
+                </div>
+            </div>
+
+            <!-- Size categories box -->
+            <div class="bg-dachshund-900 text-white p-8 sm:p-12 rounded-3xl shadow-xl">
+                <h3 class="text-2xl font-bold mb-8 text-center">Velikostní kategorie (podle obvodu hrudníku)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="border border-white/20 p-6 rounded-2xl bg-white/5">
+                        <div class="text-xl font-bold text-dachshund-300 mb-2">Standardní</div>
+                        <p class="text-sm text-white/80 leading-relaxed">Obvod hrudníku nad 35 cm. Hmotnost obvykle do 9–10 kg. Pravý neohrožený silák.</p>
+                    </div>
+                    <div class="border border-white/20 p-6 rounded-2xl bg-white/5">
+                        <div class="text-xl font-bold text-dachshund-300 mb-2">Trpasličí</div>
+                        <p class="text-sm text-white/80 leading-relaxed">Obvod hrudníku od 30 do 35 cm. Ideální společenský pes do bytu i rodinného domu.</p>
+                    </div>
+                    <div class="border border-white/20 p-6 rounded-2xl bg-white/5">
+                        <div class="text-xl font-bold text-dachshund-300 mb-2">Králičí</div>
+                        <p class="text-sm text-white/80 leading-relaxed">Obvod hrudníku do 30 cm. Nejmenší varianta, kdysi specializovaná na norování králíků.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="povaha" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="bg-dachshund-100 text-dachshund-900 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Psychologie plemene</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-dachshund-900">
+                        Malé tělo, obrovská osobnost
+                    </h2>
+                    <p class="text-dachshund-dark/80 text-lg leading-relaxed">
+                        Jezevčík není obyčejný pes. Je to samostatný myslitel, který má na všechno vlastní názor. Často si upřímně myslí, že jsou minimálně velikosti německé dogy.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4 bg-dachshund-50 p-4 rounded-2xl border border-dachshund-200">
+                            <span class="text-2xl">🦁</span>
+                            <div>
+                                <h4 class="font-bold text-dachshund-900">Neohrožená odvaha</h4>
+                                <p class="text-sm text-dachshund-dark/70">Jako zkušení noriči se nebojí velkých výzev a jdou do všeho naplno.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 bg-dachshund-50 p-4 rounded-2xl border border-dachshund-200">
+                            <span class="text-2xl">🧠</span>
+                            <div>
+                                <h4 class="font-bold text-dachshund-900">Vysoká inteligence</h4>
+                                <p class="text-sm text-dachshund-dark/70">Rychle chápou povely, ale vyžadují spravedlivý a důsledný přístup bez nátlaku.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 bg-dachshund-50 p-4 rounded-2xl border border-dachshund-200">
+                            <span class="text-2xl">❤️</span>
+                            <div>
+                                <h4 class="font-bold text-dachshund-900">Oddanost rodině</h4>
+                                <p class="text-sm text-dachshund-dark/70">Své lidi milují nade vše a nejraději tráví čas pod hřejivou dekou v těsné blízkosti.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trait meter card -->
+                <div class="bg-dachshund-5{-white} bg-dachshund-50 p-8 sm:p-10 rounded-3xl border border-dachshund-200 shadow-sm relative">
+                    <div class="absolute top-4 right-4 bg-dachshund-200 text-dachshund-900 text-xs font-extrabold px-3 py-1 rounded-full">Statistiky jezevčíka</div>
+                    <h3 class="text-2xl font-bold text-dachshund-900 mb-6">Měřič vlastností</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-sm font-bold mb-1">
+                                <span class="text-dachshund-900">Gaučový povaleč / Spáč</span>
+                                <span class="text-dachshund-500">98%</span>
+                            </div>
+                            <div class="w-full bg-dachshund-200 h-3 rounded-full overflow-hidden">
+                                <div class="bg-dachshund-500 h-full rounded-full w-[98%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-bold mb-1">
+                                <span class="text-dachshund-900">Tvrdohlavost & Vlastní hlava</span>
+                                <span class="text-dachshund-500">95%</span>
+                            </div>
+                            <div class="w-full bg-dachshund-200 h-3 rounded-full overflow-hidden">
+                                <div class="bg-dachshund-500 h-full rounded-full w-[95%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-bold mb-1">
+                                <span class="text-dachshund-900">Lovecký instinkt</span>
+                                <span class="text-dachshund-500">90%</span>
+                            </div>
+                            <div class="w-full bg-dachshund-200 h-3 rounded-full overflow-hidden">
+                                <div class="bg-dachshund-500 h-full rounded-full w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-bold mb-1">
+                                <span class="text-dachshund-900">Láska k jídlu a pamlskům</span>
+                                <span class="text-dachshund-500">100%</span>
+                            </div>
+                            <div class="w-full bg-dachshund-200 h-3 rounded-full overflow-hidden">
+                                <div class="bg-dachshund-500 h-full rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pece" class="py-20 bg-dachshund-100/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="bg-dachshund-200 text-dachshund-900 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Praktický průvodce</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-dachshund-900 mt-3 mb-4">Péče, páteř a zdravá životospráva</h2>
+                <p class="text-dachshund-dark/70 text-lg">Vzhledem k jejich unikátní tělesné stavbě vyžadují jezevčíci specifickou péči pro zajištění dlouhého a spokojeného života.</p>
+            </div>
+
+            <!-- Accordions -->
+            <div class="space-y-4">
+                <div class="bg-white rounded-2xl border border-dachshund-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion('acc-1')" class="w-full p-6 text-left font-bold text-dachshund-900 flex justify-between items-center hover:bg-dachshund-50 transition-colors">
+                        <span class="flex items-center space-x-3"><span class="text-xl">🦴</span><span>Ochrana páteře a skákání</span></span>
+                        <span id="icon-acc-1" class="text-dachshund-500 text-xl font-bold">+</span>
+                    </button>
+                    <div id="acc-1" class="hidden px-6 pb-6 text-dachshund-dark/75 text-sm sm:text-base leading-relaxed border-t border-dachshund-100 pt-4">
+                        Kvůli dlouhé páteři je nutné omezit skákání z výšek (gauče, postele). Doporučuje se pořídit speciální psí schůdky nebo rampy. Při zvedání psa vždy podepřete jak hrudník, tak zadeček ve vodorovné poloze.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-dachshund-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion('acc-2')" class="w-full p-6 text-left font-bold text-dachshund-900 flex justify-between items-center hover:bg-dachshund-50 transition-colors">
+                        <span class="flex items-center space-x-3"><span class="text-xl">🥗</span><span>Hlídání ideální hmotnosti</span></span>
+                        <span id="icon-acc-2" class="text-dachshund-500 text-xl font-bold">+</span>
+                    </button>
+                    <div id="acc-2" class="hidden px-6 pb-6 text-dachshund-dark/75 text-sm sm:text-base leading-relaxed border-t border-dachshund-100 pt-4">
+                        Obezita je pro jezevčíky obrovským rizikem, protože nadměrná váha extrémně zatěžuje jejich meziobratlové ploténky. Je nutné přesně odměřovat krmivo a nepodlehnout jejich prosebným očím u stolu.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-dachshund-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion('acc-3')" class="w-full p-6 text-left font-bold text-dachshund-900 flex justify-between items-center hover:bg-dachshund-50 transition-colors">
+                        <span class="flex items-center space-x-3"><span class="text-xl">🏃‍♂️</span><span>Dostatek pohybu a zábavy</span></span>
+                        <span id="icon-acc-3" class="text-dachshund-500 text-xl font-bold">+</span>
+                    </button>
+                    <div id="acc-3" class="hidden px-6 pb-6 text-dachshund-dark/75 text-sm sm:text-base leading-relaxed border-t border-dachshund-100 pt-4">
+                        Navzdory krátkým nohám mají velkou vytrvalost. Milují dlouhé procházky, čmuchání a stopování. Mentalní stimulace hračkami a hlavolamy je pro ně skvělou prevencí nudy.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="zajimavosti" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-dachshund-100 text-dachshund-900 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Věděli jste, že...?</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-dachshund-900 mt-3 mb-4">Zajímavosti a kuriozity</h2>
+                <p class="text-dachshund-dark/70 text-lg">Fakta o jezevčících, která vás zaručeně pobaví a překvapí.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-dachshund-50 p-6 rounded-3xl border border-dachshund-200">
+                    <div class="text-3xl mb-4">🌭</div>
+                    <h4 class="font-bold text-dachshund-900 mb-2">Původ slova "Hot Dog"</h4>
+                    <p class="text-sm text-dachshund-dark/70 leading-relaxed">Americký karikaturista nakreslil v roce 1906 jezevčíka v housce jako vtip na párky, čímž údajně inspiroval slavný název občerstvení.</p>
+                </div>
+                
+                <div class="bg-dachshund-50 p-6 rounded-3xl border border-dachshund-200">
+                    <div class="text-3xl mb-4">🎨</div>
+                    <h4 class="font-bold text-dachshund-900 mb-2">Umělecká múza Picassa</h4>
+                    <p class="text-sm text-dachshund-dark/70 leading-relaxed">Pablo Picasso měl svého věrného jezevčíka jménem Lump, který ho věrně provázel ateliérem a objevuje se v mnoha jeho skicách.</p>
+                </div>
+                
+                <div class="bg-dachshund-50 p-6 rounded-3xl border border-dachshund-200">
+                    <div class="text-3xl mb-4">🥇</div>
+                    <h4 class="font-bold text-dachshund-900 mb-2">Olympijský maskot</h4>
+                    <p class="text-sm text-dachshund-dark/70 leading-relaxed">Prvním oficiálním maskotem v historii olympijských her byl v roce 1972 v Mnichově právě pestrobarevný jezevčík Waldi.</p>
+                </div>
+                
+                <div class="bg-dachshund-50 p-6 rounded-3xl border border-dachshund-200">
+                    <div class="text-3xl mb-4">🗣️</div>
+                    <h4 class="font-bold text-dachshund-900 mb-2">Hlasité sebevědomí</h4>
+                    <p class="text-sm text-dachshund-dark/70 leading-relaxed">Navzdory své velikosti mají překvapivě hluboký a hlasitý štěkot, kterým s přehledem odradí každého nezvaného návštěvníka.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dachshund-dark text-white py-12 border-t border-dachshund-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center space-x-2">
+                <span class="text-2xl">🌭</span>
+                <span class="text-lg font-bold tracking-tight">Jezevčík.cz</span>
+            </div>
+            <p class="text-sm text-white/60 max-w-md mx-auto">Vytvořeno s obdivem ke všem krátkonohým společníkům. Čisté HTML, CSS art a Tailwind bez jakýchkoliv externích obrázků.</p>
+            <p class="text-xs text-white/40 pt-4">&copy; 2026 Jezevčík.cz. Všechna práva vyhrazena pod hrozbou hravého štěkání.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                icon.innerText = '−';
+            } else {
+                el.classList.add('hidden');
+                icon.innerText = '+';
+            }
+        }
+    </script>
+</body>
+</html>
